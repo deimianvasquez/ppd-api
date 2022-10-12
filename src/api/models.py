@@ -33,6 +33,13 @@ class User(db.Model):
   # news = db.relationship('News', backref='user', uselist=True)
 
 
+  def __init__(self, email, fullname, password ):
+    self.email = email,
+    self.fullname = fullname,
+    self.password = password
+    self.salt = b64encode(os.urandom(32)).decode("utf-8")
+
+
   def serialize(self):
     return {
       'id':self.id,
@@ -45,28 +52,36 @@ class User(db.Model):
 			'rol':self.rol.value
     }
 
+
   def set_password(self, password):
     self.password = generate_password_hash(f'{password}{self.salt}')
+
+
+  def check_password(self, password):
+    return check_password_hash(self.password, f'{password}{self.salt}')
   
 
   def get_user(id):
     try:
       user = User.query.get(id)
-      print(user.status)
       if user is not None:
         return user
       else:
         return None
     except Exception as error:
-      return {'error':500}
+      return {
+        "message": "Error query failed, please try again",
+      }
 
 
-  def get_users():
+  def get_all_users():
     try:
       users = User.query.all()
       return users
     except Exception as error:
-      return {'error':error.args}
+      return {
+        "message": "Error query failed, please try again",
+      }
 
 
   @classmethod
@@ -75,13 +90,27 @@ class User(db.Model):
       data = cls(**data)
       data.set_password(data.password)
       data.created_at = datetime.now()
-      data.salt = b64encode(os.urandom(32)).decode("utf-8")
       db.session.add(data)
       db.session.commit()
       return data
-
     except Exception as error:
       db.session.rollback()
+      print(error.args)
+      return None
+  
+
+  @classmethod
+  def login(cls, email, password):
+    try:
+      user = cls.query.filter_by(email=email).first()
+      if user is not None:
+        if user.check_password(password):
+          return user
+        else:
+          return None
+      else:
+        return None
+    except Exception as error:
       return None
     
   
