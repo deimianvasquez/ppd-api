@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "fd7f59cb-e599-4de7-8e6f-ce4cbe97f40e",
+    "colName": "ppd-api",
+    "created": "2022-10-11T21:46:31.305Z",
+    "sortNum": 10000,
+    "folders": [
+      {
+        "_id": "86b0a403-3478-40f4-997a-41ef3ccc4b99",
+        "name": "users",
+        "containerId": "",
+        "created": "2022-10-11T21:46:40.757Z",
+        "sortNum": 10000
+      }
+    ]
+  }
+]

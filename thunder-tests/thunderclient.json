@@ -1,0 +1,54 @@
+[
+  {
+    "_id": "d601005f-a24d-43b0-8cfe-5a4c01420768",
+    "colId": "fd7f59cb-e599-4de7-8e6f-ce4cbe97f40e",
+    "containerId": "86b0a403-3478-40f4-997a-41ef3ccc4b99",
+    "name": "signup",
+    "url": "http://localhost:3001/api/user",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-10-11T22:18:28.961Z",
+    "modified": "2022-10-11T22:33:33.835Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"deimianvasquez@gmail.com\",\n  \"fullname\":\"Deimian Vásquez\",\n  \"password\":\"123456789\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "493e30a0-2d3a-4654-8fef-73b7136bbc58",
+    "colId": "fd7f59cb-e599-4de7-8e6f-ce4cbe97f40e",
+    "containerId": "86b0a403-3478-40f4-997a-41ef3ccc4b99",
+    "name": "get_user",
+    "url": "http://localhost:3001/api/user",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2022-10-11T22:38:13.062Z",
+    "modified": "2022-10-11T22:40:45.991Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "cf87665c-b908-4499-8fc3-de8ec8732f89",
+    "colId": "fd7f59cb-e599-4de7-8e6f-ce4cbe97f40e",
+    "containerId": "86b0a403-3478-40f4-997a-41ef3ccc4b99",
+    "name": "login",
+    "url": "http://localhost:3001/api/login",
+    "method": "POST",
+    "sortNum": 50000,
+    "created": "2022-10-12T00:22:00.776Z",
+    "modified": "2022-10-12T00:23:30.281Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"deimianvasquez@gmail.com\",\n  \"password\":\"123456789\"\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]
