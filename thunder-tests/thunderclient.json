@@ -4,11 +4,11 @@
     "colId": "fd7f59cb-e599-4de7-8e6f-ce4cbe97f40e",
     "containerId": "86b0a403-3478-40f4-997a-41ef3ccc4b99",
     "name": "signup",
-    "url": "http://localhost:3001/api/user",
+    "url": "https://ppd-api.herokuapp.com/api/user",
     "method": "POST",
     "sortNum": 30000,
     "created": "2022-10-11T22:18:28.961Z",
-    "modified": "2022-10-11T22:33:33.835Z",
+    "modified": "2022-10-12T00:38:43.634Z",
     "headers": [],
     "params": [],
     "body": {
@@ -41,13 +41,50 @@
     "method": "POST",
     "sortNum": 50000,
     "created": "2022-10-12T00:22:00.776Z",
-    "modified": "2022-10-12T00:23:30.281Z",
+    "modified": "2022-10-12T01:44:17.191Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
       "raw": "{\n  \"email\":\"deimianvasquez@gmail.com\",\n  \"password\":\"123456789\"\n}",
       "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "7fa66d07-e3cb-4603-9bc6-2e36c884e6da",
+    "colId": "3783008c-fe30-425c-89af-08acfc8536f7",
+    "containerId": "",
+    "name": "get",
+    "url": "http://localhost:3001/api/unore",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-10-12T01:44:05.013Z",
+    "modified": "2022-10-12T01:44:32.598Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "d5d9bcc0-bc24-4252-b2c0-5ca16930d174",
+    "colId": "3783008c-fe30-425c-89af-08acfc8536f7",
+    "containerId": "",
+    "name": "create",
+    "url": "http://localhost:3001/api/unore",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-10-12T01:56:34.364Z",
+    "modified": "2022-10-12T02:02:16.573Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"amount\":200\n}",
+      "form": []
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2NTU0MDExOSwianRpIjoiY2M3OTA2YzktNmIyMy00ZTk2LWEyYzktYzUyMDYwNWU0NDlkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjY1NTQwMTE5LCJleHAiOjE2NjU1NDEwMTl9.69Vo_9K7ADvRmhqoz4jmlxI5f4E-4ymIJmL-_UKxiqs"
     },
     "tests": []
   }
