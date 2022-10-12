@@ -29,7 +29,7 @@ class User(db.Model):
   created_at = db.Column(db.DateTime(timezone=False), nullable=False)
   rol = db.Column(db.Enum(UserRol), nullable=False, default="GENERAL")
   status = db.Column(db.Enum(UserStatus), nullable=False, default="ACTIVE")
-  # unore = db.relationship('Unore', backref='user', uselist=True)
+  unore = db.relationship('Unore', backref='user', uselist=True)
   # news = db.relationship('News', backref='user', uselist=True)
 
 
@@ -113,4 +113,59 @@ class User(db.Model):
     except Exception as error:
       return None
     
-  
+
+class Unore(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  update_at = db.Column(db.DateTime(timezone=False), nullable=False)	
+  amount = db.Column(db.Float, nullable=False, default=0)
+  user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+
+  @classmethod
+  def create(cls, data):
+    try:
+      data = cls(**data)
+      data.update_at = datetime.now()
+      data.user_id = user_id
+      db.session.add(data)
+      db.session.commit()
+      return data
+    except Exception as error:
+      db.session.rollback()
+      print(error.args)
+      return None
+
+
+  def get_unore():
+    try:
+      unore = Unore.query.all()
+      if unore is not None:
+        return unore
+      else:
+        return None
+    except Exception as error:
+      return {
+        "message": "Error query failed, please try again",
+      }
+
+  @classmethod
+  def create(cls, data):
+    try:
+      data = cls(**data)
+      data.update_at = datetime.now()
+      db.session.add(data)
+      db.session.commit()
+      return data
+    except Exception as error:
+      db.session.rollback()
+      print(error.args)
+      return None
+
+
+  def serialize(self):
+    return {
+      'id':self.id,
+      'update_at':self.update_at,
+      'amount':self.amount,
+      'user_id':self.user_id
+    }
