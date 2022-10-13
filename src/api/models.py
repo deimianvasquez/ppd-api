@@ -30,7 +30,7 @@ class User(db.Model):
   rol = db.Column(db.Enum(UserRol), nullable=False, default="GENERAL")
   status = db.Column(db.Enum(UserStatus), nullable=False, default="ACTIVE")
   unore = db.relationship('Unore', backref='user', uselist=True)
-  # news = db.relationship('News', backref='user', uselist=True)
+  news = db.relationship('News', backref='user', uselist=True)
 
 
   def __init__(self, email, fullname, password ):
@@ -169,3 +169,60 @@ class Unore(db.Model):
       'amount':self.amount,
       'user_id':self.user_id
     }
+
+
+class News(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  title = db.Column(db.String(250), nullable=False)
+  subtitle = db.Column(db.Text, nullable=False)
+  summary = db.Column(db.Text, nullable=False)
+  complete = db.Column(db.Text, nullable=False)
+  image = db.Column(db.String(200), nullable=False)
+  image_secondary = db.Column(db.String(200), nullable=False)
+  image_preview = db.Column(db.String(200), nullable=False)
+  public_id_image = db.Column(db.String(100), nullable=False)
+  public_id_secondary = db.Column(db.String(100), nullable=False)
+  public_id_preview = db.Column(db.String(100), nullable=False)
+  created_at = db.Column(db.DateTime(timezone=False), nullable=False)	
+  user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+
+  def get_news():
+    try:
+      news = News.query.all()
+      if news is not None:
+        return news
+      else:
+        return None
+    except Exception as error:
+      return {
+        "message": "Error query failed, please try again",
+      }
+
+
+  @classmethod
+  def create(cls, data):
+    try:
+      data = cls(**data)
+      data.created_at = datetime.now()
+      db.session.add(data)
+      db.session.commit()
+      return data
+    except Exception as error:
+      db.session.rollback()
+      print(error.args)
+      return None
+
+  def serialize(self):
+    return {
+      'id':self.id,
+      'title':self.title,
+      'subtitle':self.subtitle,
+      'summary':self.summary,
+      'complete':self.complete,
+      'image':self.image,
+      'image_secondary':self.image_secondary,
+      'image_preview':self.image_preview,   
+    }
+
+  
