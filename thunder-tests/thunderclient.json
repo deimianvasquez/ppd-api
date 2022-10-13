@@ -41,7 +41,7 @@
     "method": "POST",
     "sortNum": 50000,
     "created": "2022-10-12T00:22:00.776Z",
-    "modified": "2022-10-12T01:44:17.191Z",
+    "modified": "2022-10-12T04:01:56.853Z",
     "headers": [],
     "params": [],
     "body": {
@@ -52,39 +52,103 @@
     "tests": []
   },
   {
-    "_id": "7fa66d07-e3cb-4603-9bc6-2e36c884e6da",
-    "colId": "3783008c-fe30-425c-89af-08acfc8536f7",
-    "containerId": "",
+    "_id": "2fc9f050-6b1e-4222-ab4e-feead3233819",
+    "colId": "fd7f59cb-e599-4de7-8e6f-ce4cbe97f40e",
+    "containerId": "259a0f38-a007-4eea-b847-ed5d28f7209a",
     "name": "get",
     "url": "http://localhost:3001/api/unore",
     "method": "GET",
-    "sortNum": 10000,
-    "created": "2022-10-12T01:44:05.013Z",
-    "modified": "2022-10-12T01:44:32.598Z",
+    "sortNum": 60000,
+    "created": "2022-10-12T03:58:13.474Z",
+    "modified": "2022-10-12T03:58:35.568Z",
     "headers": [],
     "params": [],
     "tests": []
   },
   {
-    "_id": "d5d9bcc0-bc24-4252-b2c0-5ca16930d174",
-    "colId": "3783008c-fe30-425c-89af-08acfc8536f7",
-    "containerId": "",
+    "_id": "d152f52f-641e-4717-8fa6-7bb79d7c3e80",
+    "colId": "fd7f59cb-e599-4de7-8e6f-ce4cbe97f40e",
+    "containerId": "259a0f38-a007-4eea-b847-ed5d28f7209a",
     "name": "create",
-    "url": "http://localhost:3001/api/unore",
+    "url": "https://ppd-api.herokuapp.com/api/unore",
     "method": "POST",
-    "sortNum": 20000,
-    "created": "2022-10-12T01:56:34.364Z",
-    "modified": "2022-10-12T02:02:16.573Z",
+    "sortNum": 70000,
+    "created": "2022-10-12T03:59:28.684Z",
+    "modified": "2022-10-12T03:59:59.697Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"amount\":200\n}",
+      "raw": "{\n  \"amount\":52252.3\n}",
       "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "6b300284-4df4-42d3-a304-d36182c24a0e",
+    "colId": "fd7f59cb-e599-4de7-8e6f-ce4cbe97f40e",
+    "containerId": "4dc89052-5217-48bd-b894-d269410a98d3",
+    "name": "all_news",
+    "url": "http://localhost:3001/api/news",
+    "method": "GET",
+    "sortNum": 80000,
+    "created": "2022-10-12T13:42:59.293Z",
+    "modified": "2022-10-12T13:43:07.948Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "8f212f07-4070-4d1e-a06b-c8f3d07c2ab9",
+    "colId": "fd7f59cb-e599-4de7-8e6f-ce4cbe97f40e",
+    "containerId": "4dc89052-5217-48bd-b894-d269410a98d3",
+    "name": "create",
+    "url": "http://localhost:3001/api/news",
+    "method": "POST",
+    "sortNum": 90000,
+    "created": "2022-10-12T13:43:30.175Z",
+    "modified": "2022-10-12T23:34:21.623Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "formdata",
+      "raw": "",
+      "form": [
+        {
+          "name": "title",
+          "value": "hola soy el title"
+        },
+        {
+          "name": "subtitle",
+          "value": "hola soy el subtitle"
+        },
+        {
+          "name": "summary",
+          "value": "este es el resumen del beta "
+        },
+        {
+          "name": "complete",
+          "value": "esta es la noticia completa, no se imaginas como "
+        }
+      ],
+      "files": [
+        {
+          "name": "image",
+          "value": "../../../../../Downloads/Instagram-.jpg"
+        },
+        {
+          "name": "image_secondary",
+          "value": "../../../../../Downloads/hola.jpg"
+        },
+        {
+          "name": "image_preview",
+          "value": "../../../../../Pictures/Screenshots/Screenshot from 2022-09-28 13-43-48.png"
+        }
+      ]
     },
     "auth": {
       "type": "bearer",
-      "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2NTU0MDExOSwianRpIjoiY2M3OTA2YzktNmIyMy00ZTk2LWEyYzktYzUyMDYwNWU0NDlkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjY1NTQwMTE5LCJleHAiOjE2NjU1NDEwMTl9.69Vo_9K7ADvRmhqoz4jmlxI5f4E-4ymIJmL-_UKxiqs"
+      "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2NTYxNzY0MywianRpIjoiOWIzNjRjNDQtYWI5Zi00NWJhLWEyYjYtNTk2NzI5NDkzNTEyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjY1NjE3NjQzLCJleHAiOjE2NjU3MDQwNDN9.SCth4_4Q-TKwkkA0Nc8VU4DwGw6Wgm9AW-MgUtz96Og"
     },
     "tests": []
   }
