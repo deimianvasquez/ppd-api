@@ -23,11 +23,11 @@
     "colId": "fd7f59cb-e599-4de7-8e6f-ce4cbe97f40e",
     "containerId": "86b0a403-3478-40f4-997a-41ef3ccc4b99",
     "name": "get_user",
-    "url": "http://localhost:3001/api/user",
+    "url": "https://ppd-api.herokuapp.com/api/user",
     "method": "GET",
     "sortNum": 40000,
     "created": "2022-10-11T22:38:13.062Z",
-    "modified": "2022-10-11T22:40:45.991Z",
+    "modified": "2022-10-13T06:02:38.427Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -41,7 +41,7 @@
     "method": "POST",
     "sortNum": 50000,
     "created": "2022-10-12T00:22:00.776Z",
-    "modified": "2022-10-12T04:01:56.853Z",
+    "modified": "2022-10-17T03:53:35.777Z",
     "headers": [],
     "params": [],
     "body": {
@@ -74,13 +74,17 @@
     "method": "POST",
     "sortNum": 70000,
     "created": "2022-10-12T03:59:28.684Z",
-    "modified": "2022-10-12T03:59:59.697Z",
+    "modified": "2022-10-13T06:12:41.468Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"amount\":52252.3\n}",
+      "raw": "{\n  \"amount\":4422\n}",
       "form": []
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2NTY0MTU0MSwianRpIjoiZDcyMjk3OTUtNGVhMi00OWZhLTljOTMtN2JhOTMzZTM1OGVkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjY1NjQxNTQxLCJleHAiOjE2NjU3Mjc5NDF9.EAoi4i6Fjkkd1S5hDQK3TWV83QHsiXMD7-QzRWOpolY"
     },
     "tests": []
   },
@@ -93,7 +97,7 @@
     "method": "GET",
     "sortNum": 80000,
     "created": "2022-10-12T13:42:59.293Z",
-    "modified": "2022-10-12T13:43:07.948Z",
+    "modified": "2022-10-13T11:42:49.663Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -107,7 +111,7 @@
     "method": "POST",
     "sortNum": 90000,
     "created": "2022-10-12T13:43:30.175Z",
-    "modified": "2022-10-12T23:34:21.623Z",
+    "modified": "2022-10-17T03:53:53.379Z",
     "headers": [],
     "params": [],
     "body": {
@@ -124,11 +128,11 @@
         },
         {
           "name": "summary",
-          "value": "este es el resumen del beta "
+          "value": "este es el resumen del beta"
         },
         {
           "name": "complete",
-          "value": "esta es la noticia completa, no se imaginas como "
+          "value": "esta es la noticia completa, no se imaginas como"
         }
       ],
       "files": [
@@ -148,7 +152,7 @@
     },
     "auth": {
       "type": "bearer",
-      "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2NTYxNzY0MywianRpIjoiOWIzNjRjNDQtYWI5Zi00NWJhLWEyYjYtNTk2NzI5NDkzNTEyIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjY1NjE3NjQzLCJleHAiOjE2NjU3MDQwNDN9.SCth4_4Q-TKwkkA0Nc8VU4DwGw6Wgm9AW-MgUtz96Og"
+      "bearer": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2NTk3ODgxNSwianRpIjoiOThiZjcyYmMtMmU1ZS00NzU5LWFjNjUtZDlhNDY3YWFmMTJjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNjY1OTc4ODE1LCJleHAiOjE2NjYwNjUyMTV9.tODkLaXPWCz13hvsFeyP2YrBhJz9atdLRdHBH3c5HlQ"
     },
     "tests": []
   }

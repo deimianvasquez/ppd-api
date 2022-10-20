@@ -7,6 +7,16 @@ import cloudinary.uploader as uploader
 api = Blueprint('api', __name__)
 
 
+@api.route("/verify", methods=["GET"])
+@jwt_required()
+def verify():
+    user_id = get_jwt_identity()
+    user = User.query.filter_by(id=user_id).one_or_none()
+    if user:
+        return jsonify({"verified": True}), 200
+    return jsonify({"verified": False}), 401
+
+
 @api.route('/user', methods=['GET'])
 @api.route('/user/<int:id>', methods=['GET'])
 def get_users(id=None):
@@ -121,6 +131,7 @@ def create_news():
   if request.method == 'POST':
     data_files = request.files
     data_form = request.form
+    print(data_form)
     data = {
       'title':data_form.get('title'),
       'subtitle':data_form.get('subtitle'),
@@ -131,21 +142,31 @@ def create_news():
       'image_secondary':data_files.get('image_secondary'),
       'image_preview':data_files.get('image_preview')
     }
+    print(request.files,"hola")
+
     if data is None:
+      print("1")
       return jsonify({'message':'Bad request'}), 400
     if data.get('title') is None:
+      print("2")
       return jsonify({'message':'Bad request'}), 400
     if data.get('subtitle') is None:  
+      print("3")
       return jsonify({'message':'Bad request'}), 400
     if data.get('summary') is None:
+      print("4")
       return jsonify({'message':'Bad request'}), 400
     if data.get('complete') is None:
+      print("5")
       return jsonify({'message':'Bad request'}), 400
     if data.get('image') is None:
+      print("6")
       return jsonify({'message':'Bad request'}), 400
     if data.get('image_secondary') is None:
+      print("7")
       return jsonify({'message':'Bad request'}), 400
     if data.get('image_preview') is None:
+      print("8")
       return jsonify({'message':'Bad request'}), 400
 
     res_image = uploader.upload(data_files["image"])
@@ -168,5 +189,5 @@ def create_news():
       uploader.destroy(data['public_id_secondary'])
       uploader.destroy(data['public_id_preview'])
       return jsonify({'message':'Error try again later'}), 500
-    return jsonify(news), 500
+    return jsonify(), 500
   return jsonify({'message':'method not allowed'}),405

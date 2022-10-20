@@ -95,7 +95,6 @@ class User(db.Model):
       return data
     except Exception as error:
       db.session.rollback()
-      print(error.args)
       return None
   
 
